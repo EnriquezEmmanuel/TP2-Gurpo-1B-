@@ -14,7 +14,7 @@ namespace TP2Grupo1B
         [STAThread]
         static void Main()
         {
-            ///Comentario
+            ///Comentario....
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
