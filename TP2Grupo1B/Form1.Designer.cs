@@ -125,7 +125,7 @@ namespace TP2Grupo1B
             this.toolStrip1.Location = new System.Drawing.Point(235, 244);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(301, 50);
-            this.toolStrip1.TabIndex = 24;
+            this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // tlsBtnListadoDeArtículos
@@ -137,6 +137,7 @@ namespace TP2Grupo1B
             this.tlsBtnListadoDeArtículos.Name = "tlsBtnListadoDeArtículos";
             this.tlsBtnListadoDeArtículos.Size = new System.Drawing.Size(50, 50);
             this.tlsBtnListadoDeArtículos.Text = "Listado de artículos";
+            this.tlsBtnListadoDeArtículos.Click += new System.EventHandler(this.tlsBtnListadoDeArtículos_Click);
             // 
             // toolStripSeparator1
             // 
@@ -152,6 +153,7 @@ namespace TP2Grupo1B
             this.tlsBtnBusquedaDeArticulos.Name = "tlsBtnBusquedaDeArticulos";
             this.tlsBtnBusquedaDeArticulos.Size = new System.Drawing.Size(50, 50);
             this.tlsBtnBusquedaDeArticulos.Text = "Busqueda de articulos";
+            this.tlsBtnBusquedaDeArticulos.Click += new System.EventHandler(this.tlsBtnBusquedaDeArticulos_Click);
             // 
             // toolStripSeparator2
             // 
@@ -229,7 +231,9 @@ namespace TP2Grupo1B
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblTexto);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

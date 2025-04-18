@@ -16,5 +16,34 @@ namespace TP2Grupo1B
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bienvenido al Catálogo de Artículos del Comercio.");
+        }
+
+        private void tlsBtnListadoDeArtículos_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(LstadoArticulo))
+                    return;
+            }
+
+            LstadoArticulo ventana = new LstadoArticulo();
+            ventana.Show();
+        }
+
+        private void tlsBtnBusquedaDeArticulos_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(Buscar))
+                    return;
+            }
+
+            Buscar ventana = new Buscar();
+            ventana.Show();
+        }
     }
 }
