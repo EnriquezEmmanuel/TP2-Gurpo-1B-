@@ -32,29 +32,37 @@ namespace TP2Grupo1B
             string Categoria = txtCategoria.Text;
             decimal? precio = null; // Inicializa como null
 
-            if (!string.IsNullOrEmpty(txtPrecio.Text))
+            if (!string.IsNullOrWhiteSpace(txtPrecio.Text))
             {
                 string precioTexto = txtPrecio.Text.Replace(",", ".");
-                precio = decimal.Parse(precioTexto, CultureInfo.InvariantCulture);
+
+                decimal valor;
+                bool esValido = decimal.TryParse(precioTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out valor); //Intenta convertir el texto a decimal sin tirar error si lo logra lo guarda en valor
+                                                                                                                          // y a esValido pasa a true, si el texto no es un número válido, esValido queda en false.
+
+                if (esValido)
+                {
+                    precio = valor;
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un precio válido (por ejemplo: 123.45)");
+                    return;
+                }
             }
-            // Validar si todos los campos están vacíos
-            if (string.IsNullOrWhiteSpace(codigo) &&
-                string.IsNullOrWhiteSpace(nombre) &&
-                string.IsNullOrWhiteSpace(descripcion) &&
-                string.IsNullOrWhiteSpace(Marca) &&
-                string.IsNullOrWhiteSpace(Categoria) &&
-                !precio.HasValue)
-            {
-                MessageBox.Show("Complete al menos un campo para realizar la búsqueda.");
-                return;
-            }
+
 
 
             // Ejecutar la búsqueda con los parámetros validados
             List<Producto> articulos = new List<Producto>();
             articulos.AddRange(negocio.buscar(codigo, nombre, descripcion, Marca, Categoria, precio));
             dataGridViewListado.DataSource = articulos;
-            
+            dataGridViewListado.Columns["UrlImagen"].Visible = false;
+            if (articulos == null || articulos.Count == 0)
+            {
+                MessageBox.Show("Realice una busqueda con valores existentes");
+                return;
+            }
 
 
 
@@ -77,7 +85,7 @@ namespace TP2Grupo1B
         {
             if (dataGridViewListado.CurrentRow == null) return;
 
-            Producto seleccionado = (Producto)dataGridViewListado.CurrentRow.DataBoundItem;
+            Producto seleccionado = (Producto)dataGridViewListado.CurrentRow.DataBoundItem;// hago un casteo para poder usar el DataBoundItem
             CargarImagen(seleccionado.UrlImagen);
         }
         private void CargarImagen(string imagen)
@@ -95,5 +103,7 @@ namespace TP2Grupo1B
                 pbxImagen.Image = TP2Grupo1B.Properties.Resources.istockphoto_1409329028_612x612;
             }
         }
+
+ 
     }
 }

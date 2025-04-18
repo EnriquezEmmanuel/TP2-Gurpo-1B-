@@ -21,6 +21,7 @@ namespace TP2Grupo1B
         {
             ProductoNegocio negocio = new ProductoNegocio();
             dgvListadoArticulos.DataSource = negocio.listar();
+            dgvListadoArticulos.Columns["UrlImagen"].Visible = false;
         }
     }
 }
