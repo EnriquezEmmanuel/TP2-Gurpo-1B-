@@ -10,6 +10,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using negocio;
 
 namespace TP2Grupo1B
 {
@@ -24,21 +26,19 @@ namespace TP2Grupo1B
         {
             ProductoNegocio negocio = new ProductoNegocio();
 
-            // Inicializar variables con valores nulos
             string codigo = txtCodigo.Text;
             string nombre = txtNombre.Text;
             string descripcion = txtDescripcion.Text;
-            string Marca = txtMarca.Text;
-            string Categoria = txtCategoria.Text;
-            decimal? precio = null; // Inicializa como null
+            string Marca = cboMarca.Text;
+            string Categoria = cboCategoria.Text;
+            decimal? precio = null; 
 
             if (!string.IsNullOrWhiteSpace(txtPrecio.Text))
             {
                 string precioTexto = txtPrecio.Text.Replace(",", ".");
 
                 decimal valor;
-                bool esValido = decimal.TryParse(precioTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out valor); //Intenta convertir el texto a decimal sin tirar error si lo logra lo guarda en valor
-                                                                                                                          // y a esValido pasa a true, si el texto no es un número válido, esValido queda en false.
+                bool esValido = decimal.TryParse(precioTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out valor); 
 
                 if (esValido)
                 {
@@ -73,8 +73,8 @@ namespace TP2Grupo1B
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtDescripcion.Text = "";
-            txtMarca.Text = "";
-            txtCategoria.Text = "";
+            cboMarca.SelectedIndex = -1;
+            cboCategoria.SelectedIndex = -1;
             txtPrecio.Text = "";
             dataGridViewListado.DataSource = "";
             pbxImagen.Image= TP2Grupo1B.Properties.Resources.istockphoto_1409329028_612x612;
@@ -85,7 +85,7 @@ namespace TP2Grupo1B
         {
             if (dataGridViewListado.CurrentRow == null) return;
 
-            Producto seleccionado = (Producto)dataGridViewListado.CurrentRow.DataBoundItem;// hago un casteo para poder usar el DataBoundItem
+            Producto seleccionado = (Producto)dataGridViewListado.CurrentRow.DataBoundItem;
             CargarImagen(seleccionado.UrlImagen);
         }
         private void CargarImagen(string imagen)
@@ -93,17 +93,34 @@ namespace TP2Grupo1B
            
             try
             {
-                // Opción síncrona (Load), con catch para evitar excepciones
                 pbxImagen.Load(imagen);
 
             }
             catch
             {
-                // Si falla (403, 404, timeouts…), limpio la imagen para evitar crasheo 
                 pbxImagen.Image = TP2Grupo1B.Properties.Resources.istockphoto_1409329028_612x612;
             }
         }
 
- 
+        private void Buscar_Load(object sender, EventArgs e)
+        {
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            
+            try
+            {
+                cboCategoria.DataSource = categoriaNegocio.listar();
+                cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.SelectedIndex = -1;
+                cboCategoria.SelectedIndex = -1;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
     }
 }

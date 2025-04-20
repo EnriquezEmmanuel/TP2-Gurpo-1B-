@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using negocio;
 
 namespace TP2Grupo1B
 {
@@ -43,6 +44,18 @@ namespace TP2Grupo1B
             }
 
             Buscar ventana = new Buscar();
+            ventana.Show();
+        }
+
+        private void tlsBtnAgregar_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(Agregar))
+                    return;
+            }
+
+            Agregar ventana = new Agregar();
             ventana.Show();
         }
     }

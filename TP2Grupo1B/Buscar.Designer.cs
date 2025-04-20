@@ -36,15 +36,15 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.dataGridViewListado = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblListadoArticulo = new System.Windows.Forms.Label();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDescripcion.Location = new System.Drawing.Point(354, 142);
+            this.txtDescripcion.Location = new System.Drawing.Point(357, 142);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(176, 20);
             this.txtDescripcion.TabIndex = 29;
@@ -62,7 +62,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(266, 142);
+            this.label2.Location = new System.Drawing.Point(269, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 16);
             this.label2.TabIndex = 42;
@@ -71,7 +71,7 @@
             // txtNombre
             // 
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNombre.Location = new System.Drawing.Point(354, 116);
+            this.txtNombre.Location = new System.Drawing.Point(357, 116);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(176, 20);
             this.txtNombre.TabIndex = 28;
@@ -81,7 +81,7 @@
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(266, 116);
+            this.lblNombre.Location = new System.Drawing.Point(269, 116);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(59, 16);
             this.lblNombre.TabIndex = 41;
@@ -90,7 +90,7 @@
             // btnBorrar
             // 
             this.btnBorrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBorrar.Location = new System.Drawing.Point(455, 257);
+            this.btnBorrar.Location = new System.Drawing.Point(458, 257);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 26);
             this.btnBorrar.TabIndex = 34;
@@ -101,7 +101,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBuscar.Location = new System.Drawing.Point(341, 257);
+            this.btnBuscar.Location = new System.Drawing.Point(344, 257);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 26);
             this.btnBuscar.TabIndex = 33;
@@ -112,7 +112,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPrecio.Location = new System.Drawing.Point(354, 221);
+            this.txtPrecio.Location = new System.Drawing.Point(357, 221);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(176, 20);
             this.txtPrecio.TabIndex = 32;
@@ -122,45 +122,29 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(266, 221);
+            this.label1.Location = new System.Drawing.Point(269, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 40;
             this.label1.Text = "Precio:";
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCategoria.Location = new System.Drawing.Point(354, 195);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(176, 20);
-            this.txtCategoria.TabIndex = 31;
             // 
             // lblCategoria
             // 
             this.lblCategoria.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(266, 195);
+            this.lblCategoria.Location = new System.Drawing.Point(269, 195);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(69, 16);
             this.lblCategoria.TabIndex = 39;
             this.lblCategoria.Text = "Categoria:";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMarca.Location = new System.Drawing.Point(354, 169);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(176, 20);
-            this.txtMarca.TabIndex = 30;
             // 
             // lblMarca
             // 
             this.lblMarca.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(266, 169);
+            this.lblMarca.Location = new System.Drawing.Point(269, 169);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(48, 16);
             this.lblMarca.TabIndex = 38;
@@ -170,7 +154,7 @@
             // 
             this.dataGridViewListado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridViewListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListado.Location = new System.Drawing.Point(173, 319);
+            this.dataGridViewListado.Location = new System.Drawing.Point(176, 319);
             this.dataGridViewListado.Name = "dataGridViewListado";
             this.dataGridViewListado.Size = new System.Drawing.Size(660, 208);
             this.dataGridViewListado.TabIndex = 35;
@@ -180,7 +164,7 @@
             // 
             this.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCodigo.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCodigo.Location = new System.Drawing.Point(354, 90);
+            this.txtCodigo.Location = new System.Drawing.Point(357, 90);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(176, 20);
             this.txtCodigo.TabIndex = 27;
@@ -190,7 +174,7 @@
             this.lblCodigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(263, 90);
+            this.lblCodigo.Location = new System.Drawing.Point(266, 90);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(54, 16);
             this.lblCodigo.TabIndex = 37;
@@ -200,7 +184,7 @@
             // 
             this.lblListadoArticulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblListadoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListadoArticulo.Location = new System.Drawing.Point(348, 20);
+            this.lblListadoArticulo.Location = new System.Drawing.Point(351, 20);
             this.lblListadoArticulo.Name = "lblListadoArticulo";
             this.lblListadoArticulo.Size = new System.Drawing.Size(318, 37);
             this.lblListadoArticulo.TabIndex = 36;
@@ -210,19 +194,39 @@
             // 
             this.pbxImagen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbxImagen.Image = global::TP2Grupo1B.Properties.Resources.istockphoto_1409329028_612x612;
-            this.pbxImagen.Location = new System.Drawing.Point(573, 74);
+            this.pbxImagen.Location = new System.Drawing.Point(576, 74);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(243, 239);
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagen.TabIndex = 43;
             this.pbxImagen.TabStop = false;
             // 
+            // cboMarca
+            // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(357, 168);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(176, 21);
+            this.cboMarca.TabIndex = 44;
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(357, 195);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(176, 21);
+            this.cboCategoria.TabIndex = 45;
+            // 
             // Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(990, 579);
+            this.ClientSize = new System.Drawing.Size(997, 579);
+            this.Controls.Add(this.cboCategoria);
+            this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label2);
@@ -232,9 +236,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.lblCategoria);
-            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.dataGridViewListado);
             this.Controls.Add(this.txtCodigo);
@@ -243,6 +245,7 @@
             this.Name = "Buscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar";
+            this.Load += new System.EventHandler(this.Buscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
@@ -260,14 +263,14 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.DataGridView dataGridViewListado;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblListadoArticulo;
         private System.Windows.Forms.PictureBox pbxImagen;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.ComboBox cboCategoria;
     }
 }
