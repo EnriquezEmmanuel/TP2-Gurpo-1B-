@@ -47,13 +47,14 @@ namespace TP2Grupo1B
             this.btnModModificar = new System.Windows.Forms.Button();
             this.dgvModListado = new System.Windows.Forms.DataGridView();
             this.txIdOcutlto = new System.Windows.Forms.TextBox();
+            this.lblListadoArticulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProductoModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModListado)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxProductoModificar
             // 
-            this.pbxProductoModificar.Location = new System.Drawing.Point(430, 44);
+            this.pbxProductoModificar.Location = new System.Drawing.Point(474, 114);
             this.pbxProductoModificar.Name = "pbxProductoModificar";
             this.pbxProductoModificar.Size = new System.Drawing.Size(223, 229);
             this.pbxProductoModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -63,7 +64,7 @@ namespace TP2Grupo1B
             // lbModCodigo
             // 
             this.lbModCodigo.AutoSize = true;
-            this.lbModCodigo.Location = new System.Drawing.Point(130, 47);
+            this.lbModCodigo.Location = new System.Drawing.Point(174, 117);
             this.lbModCodigo.Name = "lbModCodigo";
             this.lbModCodigo.Size = new System.Drawing.Size(40, 13);
             this.lbModCodigo.TabIndex = 3;
@@ -72,7 +73,7 @@ namespace TP2Grupo1B
             // lbModNombre
             // 
             this.lbModNombre.AutoSize = true;
-            this.lbModNombre.Location = new System.Drawing.Point(126, 78);
+            this.lbModNombre.Location = new System.Drawing.Point(170, 148);
             this.lbModNombre.Name = "lbModNombre";
             this.lbModNombre.Size = new System.Drawing.Size(44, 13);
             this.lbModNombre.TabIndex = 4;
@@ -81,7 +82,7 @@ namespace TP2Grupo1B
             // lbModDescripcion
             // 
             this.lbModDescripcion.AutoSize = true;
-            this.lbModDescripcion.Location = new System.Drawing.Point(107, 109);
+            this.lbModDescripcion.Location = new System.Drawing.Point(151, 179);
             this.lbModDescripcion.Name = "lbModDescripcion";
             this.lbModDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lbModDescripcion.TabIndex = 5;
@@ -90,7 +91,7 @@ namespace TP2Grupo1B
             // lbModMarca
             // 
             this.lbModMarca.AutoSize = true;
-            this.lbModMarca.Location = new System.Drawing.Point(133, 140);
+            this.lbModMarca.Location = new System.Drawing.Point(177, 210);
             this.lbModMarca.Name = "lbModMarca";
             this.lbModMarca.Size = new System.Drawing.Size(37, 13);
             this.lbModMarca.TabIndex = 6;
@@ -99,7 +100,7 @@ namespace TP2Grupo1B
             // lbModPrecio
             // 
             this.lbModPrecio.AutoSize = true;
-            this.lbModPrecio.Location = new System.Drawing.Point(133, 233);
+            this.lbModPrecio.Location = new System.Drawing.Point(177, 303);
             this.lbModPrecio.Name = "lbModPrecio";
             this.lbModPrecio.Size = new System.Drawing.Size(37, 13);
             this.lbModPrecio.TabIndex = 9;
@@ -108,7 +109,7 @@ namespace TP2Grupo1B
             // lbModImagen
             // 
             this.lbModImagen.AutoSize = true;
-            this.lbModImagen.Location = new System.Drawing.Point(128, 202);
+            this.lbModImagen.Location = new System.Drawing.Point(172, 272);
             this.lbModImagen.Name = "lbModImagen";
             this.lbModImagen.Size = new System.Drawing.Size(42, 13);
             this.lbModImagen.TabIndex = 8;
@@ -117,7 +118,7 @@ namespace TP2Grupo1B
             // lbModCategoria
             // 
             this.lbModCategoria.AutoSize = true;
-            this.lbModCategoria.Location = new System.Drawing.Point(116, 171);
+            this.lbModCategoria.Location = new System.Drawing.Point(160, 241);
             this.lbModCategoria.Name = "lbModCategoria";
             this.lbModCategoria.Size = new System.Drawing.Size(54, 13);
             this.lbModCategoria.TabIndex = 7;
@@ -125,7 +126,7 @@ namespace TP2Grupo1B
             // 
             // txModCodigo
             // 
-            this.txModCodigo.Location = new System.Drawing.Point(176, 44);
+            this.txModCodigo.Location = new System.Drawing.Point(220, 114);
             this.txModCodigo.Name = "txModCodigo";
             this.txModCodigo.Size = new System.Drawing.Size(216, 20);
             this.txModCodigo.TabIndex = 10;
@@ -133,21 +134,21 @@ namespace TP2Grupo1B
             // 
             // txModNombre
             // 
-            this.txModNombre.Location = new System.Drawing.Point(176, 75);
+            this.txModNombre.Location = new System.Drawing.Point(220, 145);
             this.txModNombre.Name = "txModNombre";
             this.txModNombre.Size = new System.Drawing.Size(216, 20);
             this.txModNombre.TabIndex = 11;
             // 
             // txModDescripcion
             // 
-            this.txModDescripcion.Location = new System.Drawing.Point(176, 106);
+            this.txModDescripcion.Location = new System.Drawing.Point(220, 176);
             this.txModDescripcion.Name = "txModDescripcion";
             this.txModDescripcion.Size = new System.Drawing.Size(216, 20);
             this.txModDescripcion.TabIndex = 12;
             // 
             // txModImagen
             // 
-            this.txModImagen.Location = new System.Drawing.Point(176, 201);
+            this.txModImagen.Location = new System.Drawing.Point(220, 271);
             this.txModImagen.Name = "txModImagen";
             this.txModImagen.Size = new System.Drawing.Size(216, 20);
             this.txModImagen.TabIndex = 13;
@@ -155,7 +156,7 @@ namespace TP2Grupo1B
             // 
             // txModPrecio
             // 
-            this.txModPrecio.Location = new System.Drawing.Point(176, 232);
+            this.txModPrecio.Location = new System.Drawing.Point(220, 302);
             this.txModPrecio.Name = "txModPrecio";
             this.txModPrecio.Size = new System.Drawing.Size(216, 20);
             this.txModPrecio.TabIndex = 14;
@@ -164,7 +165,7 @@ namespace TP2Grupo1B
             // 
             this.cboModMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboModMarca.FormattingEnabled = true;
-            this.cboModMarca.Location = new System.Drawing.Point(176, 137);
+            this.cboModMarca.Location = new System.Drawing.Point(220, 207);
             this.cboModMarca.Name = "cboModMarca";
             this.cboModMarca.Size = new System.Drawing.Size(121, 21);
             this.cboModMarca.TabIndex = 15;
@@ -173,7 +174,7 @@ namespace TP2Grupo1B
             // 
             this.cboModCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboModCategoria.FormattingEnabled = true;
-            this.cboModCategoria.Location = new System.Drawing.Point(176, 169);
+            this.cboModCategoria.Location = new System.Drawing.Point(220, 239);
             this.cboModCategoria.Name = "cboModCategoria";
             this.cboModCategoria.Size = new System.Drawing.Size(121, 21);
             this.cboModCategoria.TabIndex = 16;
@@ -181,7 +182,7 @@ namespace TP2Grupo1B
             // btnModModificar
             // 
             this.btnModModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModModificar.Location = new System.Drawing.Point(176, 287);
+            this.btnModModificar.Location = new System.Drawing.Point(220, 357);
             this.btnModModificar.Name = "btnModModificar";
             this.btnModModificar.Size = new System.Drawing.Size(131, 39);
             this.btnModModificar.TabIndex = 17;
@@ -192,24 +193,36 @@ namespace TP2Grupo1B
             // dgvModListado
             // 
             this.dgvModListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModListado.Location = new System.Drawing.Point(28, 343);
+            this.dgvModListado.Location = new System.Drawing.Point(72, 413);
             this.dgvModListado.Name = "dgvModListado";
             this.dgvModListado.Size = new System.Drawing.Size(742, 150);
             this.dgvModListado.TabIndex = 18;
             // 
             // txIdOcutlto
             // 
-            this.txIdOcutlto.Location = new System.Drawing.Point(430, 297);
+            this.txIdOcutlto.Location = new System.Drawing.Point(474, 367);
             this.txIdOcutlto.Name = "txIdOcutlto";
             this.txIdOcutlto.Size = new System.Drawing.Size(100, 20);
             this.txIdOcutlto.TabIndex = 19;
+            this.txIdOcutlto.Visible = false;
+            // 
+            // lblListadoArticulo
+            // 
+            this.lblListadoArticulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblListadoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListadoArticulo.Location = new System.Drawing.Point(321, 33);
+            this.lblListadoArticulo.Name = "lblListadoArticulo";
+            this.lblListadoArticulo.Size = new System.Drawing.Size(376, 37);
+            this.lblListadoArticulo.TabIndex = 37;
+            this.lblListadoArticulo.Text = "Modificacion de Articulos ";
             // 
             // frmModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(798, 537);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(997, 579);
+            this.Controls.Add(this.lblListadoArticulo);
             this.Controls.Add(this.txIdOcutlto);
             this.Controls.Add(this.dgvModListado);
             this.Controls.Add(this.btnModModificar);
@@ -258,5 +271,6 @@ namespace TP2Grupo1B
         private System.Windows.Forms.Button btnModModificar;
         private System.Windows.Forms.DataGridView dgvModListado;
         private System.Windows.Forms.TextBox txIdOcutlto;
+        private System.Windows.Forms.Label lblListadoArticulo;
     }
 }

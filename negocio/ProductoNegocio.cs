@@ -169,13 +169,14 @@ namespace negocio
             try
             {
 
+                datosModificados.setearParametro("@id", art.Id);
                 datosModificados.setearParametro("@cod", art.Codigo);
                 datosModificados.setearParametro("@nom", art.Nombre);
                 datosModificados.setearParametro("@desc", art.Descripcion);
                 datosModificados.setearParametro("@Mrca", art.Marca.Descripcion);
                 datosModificados.setearParametro("@Ctgria", art.Categoria.Descripcion);
-                datosModificados.setearParametro("@id", art.Id);
                 datosModificados.setearParametro("@img", art.UrlImagen);
+                datosModificados.setearParametro("@Prec", art.Precio);
 
                 datosModificados.setearConsulta("update IMAGENES SET ImagenUrl=@img WHERE IdArticulo=@id");
                 datosModificados.ejecutarAccion();
@@ -186,7 +187,7 @@ namespace negocio
                 datosModificados.setearConsulta("UPDATE ARTICULOS SET IdCategoria = CATEGORIAS.Id FROM ARTICULOS INNER JOIN CATEGORIAS ON ARTICULOS.Id=@id WHERE CATEGORIAS.Descripcion=@Ctgria");
                 datosModificados.ejecutarAccion();
                 datosModificados.cerrarConexion();
-                datosModificados.setearConsulta("UPDATE ARTICULOS SET Codigo=@cod, Nombre=@nom, Descripcion=@desc WHERE Id=@id");
+                datosModificados.setearConsulta("UPDATE ARTICULOS SET Codigo=@cod, Nombre=@nom, Descripcion=@desc, Precio=@Prec WHERE Id=@id");
                 datosModificados.ejecutarAccion();
                 datosModificados.cerrarConexion();
 

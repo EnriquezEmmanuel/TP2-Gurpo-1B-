@@ -64,30 +64,14 @@ namespace TP2Grupo1B
             listaArticulos = listadoArticulos.listar();
             dgvModListado.DataSource = listaArticulos;
 
+            CategoriaNegocio listaCategoria = new CategoriaNegocio();
+            cboModCategoria.DataSource = listaCategoria.listar();
 
-            generarLista(cboModMarca, "Marca");      //|Emma| Algo rústico que se me ocurrió, porque no funcionaba de la manera del profe.
-            generarLista(cboModCategoria, "Categoria");
+            MarcaNegocio listaMarca = new MarcaNegocio();
+            cboModMarca.DataSource = listaMarca.listar();
 
-        }
+            
 
-        private void generarLista(ComboBox combo, string atributo)
-        {
-            List<string> listaDesp = new List<string>();
-            for (int i = 0; i < listaArticulos.Count; i++)
-            {
-                switch (atributo)
-                {
-                    case "Marca":
-                        listaDesp.Add(listaArticulos[i].Marca.Descripcion);
-                        break;
-                    case "Categoria":
-                        listaDesp.Add(listaArticulos[i].Categoria.Descripcion);
-                        break;
-                }
-            }
-
-            List<string> listaDesplegables = listaDesp.Distinct().ToList();     //|Emma| para que no se repitan
-            combo.DataSource = listaDesplegables;
         }
 
         private void txModCodigo_TextChanged(object sender, EventArgs e)
@@ -150,10 +134,15 @@ namespace TP2Grupo1B
 
             ArticuloModificar.Id = int.Parse(txIdOcutlto.Text);
 
+
+            /*
             ArticuloModificar.Marca = new Marca();
             ArticuloModificar.Marca.Descripcion = (string)cboModMarca.SelectedItem;
             ArticuloModificar.Categoria = new Categoria();
             ArticuloModificar.Categoria.Descripcion = (string)cboModCategoria.SelectedItem;
+            */
+            ArticuloModificar.Marca= (Marca)cboModMarca.SelectedItem;
+            ArticuloModificar.Categoria = (Categoria)cboModCategoria.SelectedItem;
 
         }
 
@@ -179,6 +168,6 @@ namespace TP2Grupo1B
             }
         }
 
-        
+      
     }
 }
