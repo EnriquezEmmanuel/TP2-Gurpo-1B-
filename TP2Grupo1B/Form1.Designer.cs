@@ -36,17 +36,17 @@ namespace TP2Grupo1B
             this.lblBuscar = new System.Windows.Forms.Label();
             this.lblListado = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tlsBtnListadoDeArtículos = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tlsBtnBusquedaDeArticulos = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tlsBtnAgregar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tlsBtnModificarArtículo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tlsBtnEliminacionDeArtículo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.lblTexto = new System.Windows.Forms.Label();
-            this.tlsBtnListadoDeArtículos = new System.Windows.Forms.ToolStripButton();
-            this.tlsBtnBusquedaDeArticulos = new System.Windows.Forms.ToolStripButton();
-            this.tlsBtnAgregar = new System.Windows.Forms.ToolStripButton();
-            this.tlsBtnModificarArtículo = new System.Windows.Forms.ToolStripButton();
-            this.tlsBtnEliminacionDeArtículo = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,25 +128,79 @@ namespace TP2Grupo1B
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // tlsBtnListadoDeArtículos
+            // 
+            this.tlsBtnListadoDeArtículos.AutoSize = false;
+            this.tlsBtnListadoDeArtículos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsBtnListadoDeArtículos.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnListadoDeArtículos.Image")));
+            this.tlsBtnListadoDeArtículos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsBtnListadoDeArtículos.Name = "tlsBtnListadoDeArtículos";
+            this.tlsBtnListadoDeArtículos.Size = new System.Drawing.Size(50, 50);
+            this.tlsBtnListadoDeArtículos.Text = "Listado de artículos";
+            this.tlsBtnListadoDeArtículos.Click += new System.EventHandler(this.tlsBtnListadoDeArtículos_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
+            // 
+            // tlsBtnBusquedaDeArticulos
+            // 
+            this.tlsBtnBusquedaDeArticulos.AutoSize = false;
+            this.tlsBtnBusquedaDeArticulos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsBtnBusquedaDeArticulos.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnBusquedaDeArticulos.Image")));
+            this.tlsBtnBusquedaDeArticulos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsBtnBusquedaDeArticulos.Name = "tlsBtnBusquedaDeArticulos";
+            this.tlsBtnBusquedaDeArticulos.Size = new System.Drawing.Size(50, 50);
+            this.tlsBtnBusquedaDeArticulos.Text = "Busqueda de articulos";
+            this.tlsBtnBusquedaDeArticulos.Click += new System.EventHandler(this.tlsBtnBusquedaDeArticulos_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
             // 
+            // tlsBtnAgregar
+            // 
+            this.tlsBtnAgregar.AutoSize = false;
+            this.tlsBtnAgregar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsBtnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnAgregar.Image")));
+            this.tlsBtnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsBtnAgregar.Name = "tlsBtnAgregar";
+            this.tlsBtnAgregar.Size = new System.Drawing.Size(50, 50);
+            this.tlsBtnAgregar.Text = "Agrgar articulo";
+            this.tlsBtnAgregar.Click += new System.EventHandler(this.tlsBtnAgregar_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 50);
             // 
+            // tlsBtnModificarArtículo
+            // 
+            this.tlsBtnModificarArtículo.AutoSize = false;
+            this.tlsBtnModificarArtículo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsBtnModificarArtículo.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnModificarArtículo.Image")));
+            this.tlsBtnModificarArtículo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsBtnModificarArtículo.Name = "tlsBtnModificarArtículo";
+            this.tlsBtnModificarArtículo.Size = new System.Drawing.Size(50, 50);
+            this.tlsBtnModificarArtículo.Text = "Modificar artículo";
+            this.tlsBtnModificarArtículo.Click += new System.EventHandler(this.tlsBtnModificarArtículo_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 50);
+            // 
+            // tlsBtnEliminacionDeArtículo
+            // 
+            this.tlsBtnEliminacionDeArtículo.AutoSize = false;
+            this.tlsBtnEliminacionDeArtículo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsBtnEliminacionDeArtículo.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnEliminacionDeArtículo.Image")));
+            this.tlsBtnEliminacionDeArtículo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsBtnEliminacionDeArtículo.Name = "tlsBtnEliminacionDeArtículo";
+            this.tlsBtnEliminacionDeArtículo.Size = new System.Drawing.Size(50, 50);
+            this.tlsBtnEliminacionDeArtículo.Text = "Eliminacion de artículo";
             // 
             // toolStripSeparator5
             // 
@@ -164,59 +218,6 @@ namespace TP2Grupo1B
             this.lblTexto.Size = new System.Drawing.Size(390, 70);
             this.lblTexto.TabIndex = 23;
             this.lblTexto.Text = "Catalogo de articulos";
-            // 
-            // tlsBtnListadoDeArtículos
-            // 
-            this.tlsBtnListadoDeArtículos.AutoSize = false;
-            this.tlsBtnListadoDeArtículos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tlsBtnListadoDeArtículos.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnListadoDeArtículos.Image")));
-            this.tlsBtnListadoDeArtículos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tlsBtnListadoDeArtículos.Name = "tlsBtnListadoDeArtículos";
-            this.tlsBtnListadoDeArtículos.Size = new System.Drawing.Size(50, 50);
-            this.tlsBtnListadoDeArtículos.Text = "Listado de artículos";
-            this.tlsBtnListadoDeArtículos.Click += new System.EventHandler(this.tlsBtnListadoDeArtículos_Click);
-            // 
-            // tlsBtnBusquedaDeArticulos
-            // 
-            this.tlsBtnBusquedaDeArticulos.AutoSize = false;
-            this.tlsBtnBusquedaDeArticulos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tlsBtnBusquedaDeArticulos.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnBusquedaDeArticulos.Image")));
-            this.tlsBtnBusquedaDeArticulos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tlsBtnBusquedaDeArticulos.Name = "tlsBtnBusquedaDeArticulos";
-            this.tlsBtnBusquedaDeArticulos.Size = new System.Drawing.Size(50, 50);
-            this.tlsBtnBusquedaDeArticulos.Text = "Busqueda de articulos";
-            this.tlsBtnBusquedaDeArticulos.Click += new System.EventHandler(this.tlsBtnBusquedaDeArticulos_Click);
-            // 
-            // tlsBtnAgregar
-            // 
-            this.tlsBtnAgregar.AutoSize = false;
-            this.tlsBtnAgregar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tlsBtnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnAgregar.Image")));
-            this.tlsBtnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tlsBtnAgregar.Name = "tlsBtnAgregar";
-            this.tlsBtnAgregar.Size = new System.Drawing.Size(50, 50);
-            this.tlsBtnAgregar.Text = "Agrgar articulo";
-            this.tlsBtnAgregar.Click += new System.EventHandler(this.tlsBtnAgregar_Click);
-            // 
-            // tlsBtnModificarArtículo
-            // 
-            this.tlsBtnModificarArtículo.AutoSize = false;
-            this.tlsBtnModificarArtículo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tlsBtnModificarArtículo.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnModificarArtículo.Image")));
-            this.tlsBtnModificarArtículo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tlsBtnModificarArtículo.Name = "tlsBtnModificarArtículo";
-            this.tlsBtnModificarArtículo.Size = new System.Drawing.Size(50, 50);
-            this.tlsBtnModificarArtículo.Text = "Modificar artículo";
-            // 
-            // tlsBtnEliminacionDeArtículo
-            // 
-            this.tlsBtnEliminacionDeArtículo.AutoSize = false;
-            this.tlsBtnEliminacionDeArtículo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tlsBtnEliminacionDeArtículo.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnEliminacionDeArtículo.Image")));
-            this.tlsBtnEliminacionDeArtículo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tlsBtnEliminacionDeArtículo.Name = "tlsBtnEliminacionDeArtículo";
-            this.tlsBtnEliminacionDeArtículo.Size = new System.Drawing.Size(50, 50);
-            this.tlsBtnEliminacionDeArtículo.Text = "Eliminacion de artículo";
             // 
             // Form1
             // 

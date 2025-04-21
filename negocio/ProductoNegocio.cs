@@ -19,7 +19,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT  A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE 1=1");
+                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, C.Descripcion as Categoria, M.Descripcion as Marca, I.ImagenUrl as UrlImagen FROM ARTICULOS A, CATEGORIAS C,MARCAS M, IMAGENES I where A.IdCategoria=C.Id and  A.IdMarca=M.Id and A.Id=I.IdArticulo;");
                 datos.ejecutarLectura();
                 
                 while (datos.Lector.Read())
@@ -27,6 +27,8 @@ namespace negocio
 
                     Producto aux = new Producto(); // creo un catalogo auxiliar para cargarlo con los datos de la base de datos
                     // guardo los datos que necesito
+
+                    aux.Id = (int)datos.Lector["Id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
@@ -35,6 +37,7 @@ namespace negocio
                     aux.Categoria = new Categoria();
                     aux.Categoria.Descripcion  = (string)datos.Lector["Categoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.UrlImagen = (string)datos.Lector["UrlImagen"];
 
 
                     lista.Add(aux);
@@ -158,6 +161,39 @@ namespace negocio
                 datos.cerrarConexion();
             }
 
+
+        }
+        public void Modificar(Producto art)
+        {
+            AccesoDatos datosModificados = new AccesoDatos();
+            try
+            {
+
+                datosModificados.setearParametro("@cod", art.Codigo);
+                datosModificados.setearParametro("@nom", art.Nombre);
+                datosModificados.setearParametro("@desc", art.Descripcion);
+                datosModificados.setearParametro("@Mrca", art.Marca.Descripcion);
+                datosModificados.setearParametro("@Ctgria", art.Categoria.Descripcion);
+                datosModificados.setearParametro("@id", art.Id);
+                datosModificados.setearParametro("@img", art.UrlImagen);
+
+                datosModificados.setearConsulta("update IMAGENES SET ImagenUrl=@img WHERE IdArticulo=@id");
+                datosModificados.ejecutarAccion();
+                datosModificados.cerrarConexion();
+                datosModificados.setearConsulta("UPDATE ARTICULOS SET IdMarca = MARCAS.Id FROM ARTICULOS INNER JOIN MARCAS ON ARTICULOS.Id=@id WHERE MARCAS.Descripcion=@Mrca");
+                datosModificados.ejecutarAccion();
+                datosModificados.cerrarConexion();
+                datosModificados.setearConsulta("UPDATE ARTICULOS SET IdCategoria = CATEGORIAS.Id FROM ARTICULOS INNER JOIN CATEGORIAS ON ARTICULOS.Id=@id WHERE CATEGORIAS.Descripcion=@Ctgria");
+                datosModificados.ejecutarAccion();
+                datosModificados.cerrarConexion();
+                datosModificados.setearConsulta("UPDATE ARTICULOS SET Codigo=@cod, Nombre=@nom, Descripcion=@desc WHERE Id=@id");
+                datosModificados.ejecutarAccion();
+                datosModificados.cerrarConexion();
+
+            }
+            catch (Exception ex)
+            { throw ex; }
+            //finally { datosModificados.cerrarConexion(); }
 
         }
     }

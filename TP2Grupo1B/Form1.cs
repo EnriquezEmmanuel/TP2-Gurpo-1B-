@@ -58,5 +58,11 @@ namespace TP2Grupo1B
             Agregar ventana = new Agregar();
             ventana.Show();
         }
+
+        private void tlsBtnModificarArtículo_Click(object sender, EventArgs e)
+        {
+            frmModificar vtnModificar = new frmModificar();
+            vtnModificar.ShowDialog();
+        }
     }
 }
