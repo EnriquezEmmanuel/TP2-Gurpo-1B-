@@ -58,6 +58,7 @@ namespace TP2Grupo1B
             articulos.AddRange(negocio.buscar(codigo, nombre, descripcion, Marca, Categoria, precio));
             dataGridViewListado.DataSource = articulos;
             dataGridViewListado.Columns["UrlImagen"].Visible = false;
+            //dataGridViewListado.Columns["id"].Visible = false;
             if (articulos == null || articulos.Count == 0)
             {
                 MessageBox.Show("Realice una busqueda con valores existentes");
@@ -123,6 +124,7 @@ namespace TP2Grupo1B
             }
         }
 
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ProductoNegocio negocio = new ProductoNegocio();
@@ -163,6 +165,9 @@ namespace TP2Grupo1B
             }
         }
 
+
+
+
         private void Cargar()
         {
             ProductoNegocio negocio = new ProductoNegocio();
@@ -171,4 +176,5 @@ namespace TP2Grupo1B
             dataGridViewListado.Columns["UrlImagen"].Visible = false; // Ocultar la columna de la imagen
         }
     }
+
 }

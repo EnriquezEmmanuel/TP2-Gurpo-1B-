@@ -63,11 +63,11 @@
             this.dgvListadoArticulos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvListadoArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvListadoArticulos.Location = new System.Drawing.Point(48, 215);
+            this.dgvListadoArticulos.Location = new System.Drawing.Point(43, 216);
             this.dgvListadoArticulos.MultiSelect = false;
             this.dgvListadoArticulos.Name = "dgvListadoArticulos";
             this.dgvListadoArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoArticulos.Size = new System.Drawing.Size(756, 320);
+            this.dgvListadoArticulos.Size = new System.Drawing.Size(761, 320);
             this.dgvListadoArticulos.TabIndex = 3;
             // 
             // LstadoArticulo

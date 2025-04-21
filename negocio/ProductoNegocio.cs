@@ -19,7 +19,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT A.id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id LEFT JOIN (SELECT IdArticulo, MIN(ImagenUrl) AS ImagenUrl FROM IMAGENES GROUP BY IdArticulo) I ON I.IdArticulo = A.id;");
+                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, C.Descripcion as Categoria, M.Descripcion as Marca, I.ImagenUrl as UrlImagen FROM ARTICULOS A, CATEGORIAS C,MARCAS M, IMAGENES I where A.IdCategoria=C.Id and  A.IdMarca=M.Id and A.Id=I.IdArticulo;");
                 datos.ejecutarLectura();
                 
                 while (datos.Lector.Read())
@@ -27,23 +27,17 @@ namespace negocio
 
                     Producto aux = new Producto(); // creo un catalogo auxiliar para cargarlo con los datos de la base de datos
                     // guardo los datos que necesito
-                    aux.Id = (int)datos.Lector["id"];
+
+                    aux.Id = (int)datos.Lector["Id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Marca = new Marca();
                     aux.Marca.Descripcion = (string)datos.Lector["Marca"];
-                    // Verifica si la categoría es NULL antes de asignarla
-                    if (datos.Lector["Categoria"] == DBNull.Value)
-                    {
-                        aux.Categoria = null;  // Asigna null si la categoría es NULL
-                    }
-                    else
-                    {
-                        aux.Categoria = new Categoria();
-                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                    }
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Descripcion  = (string)datos.Lector["Categoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.UrlImagen = (string)datos.Lector["UrlImagen"];
 
 
                     lista.Add(aux);
@@ -101,7 +95,7 @@ namespace negocio
             try
             {
                 //Armo una consulta de manera dinamica
-                string consulta = "SELECT A.id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id LEFT JOIN (SELECT IdArticulo, MIN(ImagenUrl) AS ImagenUrl FROM IMAGENES GROUP BY IdArticulo) I ON I.IdArticulo = A.id;";
+                string consulta = "SELECT A.id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I on I.IdArticulo = A.id WHERE 1=1";
 
                 if (!string.IsNullOrEmpty(Codigo))
                 {
@@ -139,37 +133,19 @@ namespace negocio
 
                 while (datos.Lector.Read())
                 {
-                    Producto aux = new Producto();
+
+                    Producto aux = new Producto(); // creo un catalogo auxiliar para cargarlo con los datos de la base de datos
+                    // guardo los datos que necesito
                     aux.Id = (int)datos.Lector["id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-
                     aux.Marca = new Marca();
-                    aux.Marca.Descripcion = datos.Lector["Marca"] == DBNull.Value ? null : (string)datos.Lector["Marca"];
-
-                    // Si la categoría es NULL en la base de datos, no se asigna ninguna categoría al producto
-                    if (datos.Lector["Categoria"] == DBNull.Value)
-                    {
-                        aux.Categoria = null;
-                    }
-                    else
-                    {
-                        aux.Categoria = new Categoria();
-                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                    }
-
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-
-                    // Si no hay una imagen registrada (valor NULL en la base de datos), se asigna una imagen por defecto
-                    if (datos.Lector["ImagenUrl"] == DBNull.Value)
-                    {
-                        aux.UrlImagen = "TP2Grupo1B.Properties.Resources.istockphoto_1409329028_612x612";
-                    }
-                    else
-                    {
-                        aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
-                    }
+                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
 
                     buscar.Add(aux);
                 }
@@ -188,6 +164,41 @@ namespace negocio
 
 
         }
+        public void Modificar(Producto art)
+        {
+            AccesoDatos datosModificados = new AccesoDatos();
+            try
+            {
+
+                datosModificados.setearParametro("@id", art.Id);
+                datosModificados.setearParametro("@cod", art.Codigo);
+                datosModificados.setearParametro("@nom", art.Nombre);
+                datosModificados.setearParametro("@desc", art.Descripcion);
+                datosModificados.setearParametro("@Mrca", art.Marca.Descripcion);
+                datosModificados.setearParametro("@Ctgria", art.Categoria.Descripcion);
+                datosModificados.setearParametro("@img", art.UrlImagen);
+                datosModificados.setearParametro("@Prec", art.Precio);
+
+                datosModificados.setearConsulta("update IMAGENES SET ImagenUrl=@img WHERE IdArticulo=@id");
+                datosModificados.ejecutarAccion();
+                datosModificados.cerrarConexion();
+                datosModificados.setearConsulta("UPDATE ARTICULOS SET IdMarca = MARCAS.Id FROM ARTICULOS INNER JOIN MARCAS ON ARTICULOS.Id=@id WHERE MARCAS.Descripcion=@Mrca");
+                datosModificados.ejecutarAccion();
+                datosModificados.cerrarConexion();
+                datosModificados.setearConsulta("UPDATE ARTICULOS SET IdCategoria = CATEGORIAS.Id FROM ARTICULOS INNER JOIN CATEGORIAS ON ARTICULOS.Id=@id WHERE CATEGORIAS.Descripcion=@Ctgria");
+                datosModificados.ejecutarAccion();
+                datosModificados.cerrarConexion();
+                datosModificados.setearConsulta("UPDATE ARTICULOS SET Codigo=@cod, Nombre=@nom, Descripcion=@desc, Precio=@Prec WHERE Id=@id");
+                datosModificados.ejecutarAccion();
+                datosModificados.cerrarConexion();
+
+            }
+            catch (Exception ex)
+            { throw ex; }
+            //finally { datosModificados.cerrarConexion(); }
+
+        }
+
 
         public void Eliminar(int id)
         {
@@ -208,8 +219,6 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-
-
 
     }
 

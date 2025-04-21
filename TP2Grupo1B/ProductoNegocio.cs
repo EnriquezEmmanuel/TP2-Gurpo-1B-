@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TP2Grupo1B
 {
@@ -23,9 +21,9 @@ namespace TP2Grupo1B
 
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS01; database=CATALOGO_P4_DB; Integrated Security=true"; ;
+                conexion.ConnectionString = "server=.\\SQLEXPRESS01; database=CATALOGO_P3_DB; Integrated Security=true"; ;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.id,  A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE 1=1";
+                comando.CommandText = "SELECT  A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE 1=1";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -36,7 +34,6 @@ namespace TP2Grupo1B
 
                     Producto aux = new Producto(); // creo un catalogo auxiliar para cargarlo con los datos de la base de datos
                     // guardo los datos que necesito
-                    aux.Id = (int)lector["id"];
                     aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
@@ -72,11 +69,11 @@ namespace TP2Grupo1B
 
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS01; database=CATALOGO_P4_DB; Integrated Security=true"; 
+                conexion.ConnectionString = "server=.\\SQLEXPRESS01; database=CATALOGO_P3_DB; Integrated Security=true"; ;
                 comando.CommandType = System.Data.CommandType.Text;
 
                 //Armo una consulta de manera dinamica
-                string consulta = "SELECT A.id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I on I.IdArticulo = A.id WHERE 1=1"; 
+                string consulta = "SELECT A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I on I.IdArticulo = A.id WHERE 1=1";
                 comando.Connection = conexion;
 
                 if (!string.IsNullOrEmpty(Codigo))
@@ -120,7 +117,6 @@ namespace TP2Grupo1B
 
                     Producto aux = new Producto(); // creo un catalogo auxiliar para cargarlo con los datos de la base de datos
                     // guardo los datos que necesito
-                    aux.Id = (int)lector["id"];
                     aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
@@ -144,44 +140,6 @@ namespace TP2Grupo1B
 
 
         }
-
-        public void Eliminar(int id)
-        {
-            SqlConnection conexion = new SqlConnection(); /// es un atributo para la coneccion
-            SqlCommand comando = new SqlCommand(); // para realizar aciones
-            
-
-            try
-            {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS01; database=CATALOGO_P4_DB; Integrated Security=true"; ;
-                comando.CommandType = System.Data.CommandType.Text;
-
-                //Armo una consulta de manera dinamica
-                string consulta = "DELETE FROM ARTICULOS WHERE id = @id";
-                comando.Connection = conexion;
-
-                
-                comando.Parameters.AddWithValue("@id", id);
-                comando.CommandText = consulta;
-
-
-
-                conexion.Open();
-                comando.ExecuteNonQuery();
-
-
-                conexion.Close();
-                
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            
-        }
-        
-
     }
 
 

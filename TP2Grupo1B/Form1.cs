@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using negocio;
 
 namespace TP2Grupo1B
-{
+{//esto es una prueba
     public partial class Form1 : Form
     {
         public Form1()
@@ -57,6 +57,12 @@ namespace TP2Grupo1B
 
             Agregar ventana = new Agregar();
             ventana.Show();
+        }
+
+        private void tlsBtnModificarArtículo_Click(object sender, EventArgs e)
+        {
+            frmModificar vtnModificar = new frmModificar();
+            vtnModificar.ShowDialog();
         }
     }
 }

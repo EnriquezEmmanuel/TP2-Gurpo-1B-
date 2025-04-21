@@ -53,7 +53,7 @@ namespace TP2Grupo1B
             this.lblModificar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblModificar.AutoSize = true;
             this.lblModificar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblModificar.Location = new System.Drawing.Point(452, 264);
+            this.lblModificar.Location = new System.Drawing.Point(447, 282);
             this.lblModificar.Name = "lblModificar";
             this.lblModificar.Size = new System.Drawing.Size(50, 13);
             this.lblModificar.TabIndex = 28;
@@ -64,7 +64,7 @@ namespace TP2Grupo1B
             this.lblAgregar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblAgregar.AutoSize = true;
             this.lblAgregar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblAgregar.Location = new System.Drawing.Point(396, 264);
+            this.lblAgregar.Location = new System.Drawing.Point(391, 282);
             this.lblAgregar.Name = "lblAgregar";
             this.lblAgregar.Size = new System.Drawing.Size(44, 13);
             this.lblAgregar.TabIndex = 27;
@@ -75,7 +75,7 @@ namespace TP2Grupo1B
             this.lblBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblBuscar.Location = new System.Drawing.Point(341, 264);
+            this.lblBuscar.Location = new System.Drawing.Point(336, 282);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(40, 13);
             this.lblBuscar.TabIndex = 26;
@@ -86,7 +86,7 @@ namespace TP2Grupo1B
             this.lblListado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblListado.AutoSize = true;
             this.lblListado.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblListado.Location = new System.Drawing.Point(285, 264);
+            this.lblListado.Location = new System.Drawing.Point(280, 282);
             this.lblListado.Name = "lblListado";
             this.lblListado.Size = new System.Drawing.Size(41, 13);
             this.lblListado.TabIndex = 25;
@@ -108,7 +108,7 @@ namespace TP2Grupo1B
             this.tlsBtnModificarArtículo,
             this.toolStripSeparator4,
             this.toolStripSeparator5});
-            this.toolStrip1.Location = new System.Drawing.Point(271, 214);
+            this.toolStrip1.Location = new System.Drawing.Point(266, 232);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(245, 50);
             this.toolStrip1.TabIndex = 0;
@@ -171,6 +171,7 @@ namespace TP2Grupo1B
             this.tlsBtnModificarArtículo.Name = "tlsBtnModificarArtículo";
             this.tlsBtnModificarArtículo.Size = new System.Drawing.Size(50, 50);
             this.tlsBtnModificarArtículo.Text = "Modificar artículo";
+            this.tlsBtnModificarArtículo.Click += new System.EventHandler(this.tlsBtnModificarArtículo_Click);
             // 
             // toolStripSeparator4
             // 

@@ -146,7 +146,7 @@
             this.dataGridViewListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListado.Location = new System.Drawing.Point(159, 319);
             this.dataGridViewListado.Name = "dataGridViewListado";
-            this.dataGridViewListado.Size = new System.Drawing.Size(754, 208);
+            this.dataGridViewListado.Size = new System.Drawing.Size(758, 208);
             this.dataGridViewListado.TabIndex = 35;
             this.dataGridViewListado.SelectionChanged += new System.EventHandler(this.dataGridViewListado_SelectionChanged);
             // 
@@ -214,9 +214,9 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEliminar.Location = new System.Drawing.Point(458, 257);
+            this.btnEliminar.Location = new System.Drawing.Point(457, 259);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 26);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 46;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;

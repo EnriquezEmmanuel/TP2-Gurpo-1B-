@@ -201,6 +201,7 @@
             this.pbxImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbxImagen.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pbxImagen.Location = new System.Drawing.Point(320, 96);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(173, 155);
